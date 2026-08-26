@@ -16,6 +16,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.9
       - key: DATABASE_URL
+        value: postgresql://projectdb_glebdev_user:QwfleugAGUnEr5KimNqCXD61Y6Ekd5jv@dpg-da7jmr5g1s2s73844edg-a/projectdb_glebdev
         fromDatabase:
           name: my-postgres-db
           property: connectionString
