@@ -11,7 +11,7 @@ services:
     runtime: python
     plan: free
     buildCommand: "pip install -r inventory_manager/requirements.txt"
-    startCommand: "gunicorn --chdir inventory_manager core.wsgi:application --bind 0.0.0.0:$PORT"
+    startCommand: "gunicorn --chdir inventory_manager.core.wsgi:application --bind 0.0.0.0:$PORT"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
