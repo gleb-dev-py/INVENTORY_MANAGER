@@ -10,8 +10,8 @@ services:
     name: inventory-manager
     runtime: python
     plan: free
-    buildCommand: "pip install uv && uv sync"
-    startCommand: "uv run uvicorn inventory_manager.core.asgi:application --host 0.0.0.0 --port $PORT"
+    buildCommand: "pip install -r inventory_manager/requirements.txt"
+    startCommand: "gunicorn --chdir inventory_manager core.wsgi:application --bind 0.0.0.0:$PORT"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
